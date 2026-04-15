@@ -91,8 +91,3 @@ async def compare(
     return data
 
 
-@router.get("/cache/flush")
-async def flush_cache():
-    r = await get_redis()
-    await r.flushall()
-    return {"status": "cache flushed"}
