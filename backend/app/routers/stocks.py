@@ -7,6 +7,8 @@ from app.schemas import CompanyOut, StockDataOut, SummaryOut
 from app.services.analytics import get_last_n_days, get_summary, compare_stocks
 from app.cache import get_cache, set_cache
 import json
+from app.services.cache import get_redis
+
 
 router = APIRouter()
 
