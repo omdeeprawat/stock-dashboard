@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Company, StockDataPoint, Summary } from "./types";
 
-const BASE = "https://stock-dashboard.onrender.com/api";
+const BASE = "https://stock-dashboard-aqms.onrender.com/api";
 
 export const fetchCompanies = () =>
   axios.get<Company[]>(`${BASE}/companies`).then((r) => r.data);
