@@ -87,3 +87,10 @@ async def compare(
     data = await compare_stocks(db, symbol1, symbol2, days)
     await set_cache(cache_key, json.dumps(data), ttl=3600)
     return data
+
+
+@router.delete("/cache/flush")
+async def flush_cache():
+    r = await get_redis()
+    await r.flushall()
+    return {"status": "cache flushed"}
